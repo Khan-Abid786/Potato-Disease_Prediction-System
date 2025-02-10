@@ -17,7 +17,7 @@ CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
 
 # Function to preprocess image
 def preprocess_image(image):
-    image = image.resize((224, 224))  # Resize image to model input size
+    image = image.resize((256, 256))  # Resize image to model input size
     image = np.array(image) / 255.0   # Normalize
     image = np.expand_dims(image, axis=0)  # Add batch dimension
     return image
