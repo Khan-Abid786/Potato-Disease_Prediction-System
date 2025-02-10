@@ -3,18 +3,6 @@ import tensorflow as tf
 import numpy as np
 import cv2
 from PIL import Image
-import os
-import logging
-
-
-# **1️⃣ Suppress Warnings & Logs**
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress TensorFlow warnings
-tf.get_logger().setLevel(logging.ERROR)   # Suppress absl warnings
-st.set_option('server.enableCORS', False)
-st.set_option('deprecation.showfileUploaderEncoding', False)
-st.set_option('client.showErrorDetails', False)  # Hide technical errors in UI
-logging.getLogger("streamlit").setLevel(logging.ERROR)
-
 
 
 # Load trained model
