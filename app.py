@@ -7,7 +7,7 @@ from PIL import Image
 # Load trained model
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("model.h5")
+    model = tf.keras.models.load_model("Potato_Disease_Prediction1.h5")
     return model
 
 model = load_model()
