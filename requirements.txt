@@ -3,3 +3,5 @@ tensorflow
 numpy
 opencv-python-headless
 pillow
+logging
+os
