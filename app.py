@@ -5,7 +5,7 @@ import cv2
 from PIL import Image
 
 # Load trained model
-MODEL_PATH = "Potato_Disease_Prediction1.h5"  # Ensure this path is correct
+MODEL_PATH = "Potato_Disease_Prediction2.h5"  # Ensure this path is correct
 model = tf.keras.models.load_model(MODEL_PATH)
 
 # Define class names (Ensure this matches the model's output)
