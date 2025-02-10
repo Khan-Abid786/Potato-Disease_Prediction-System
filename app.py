@@ -18,7 +18,7 @@ def preprocess_image(image):
         image = image.convert("RGB")
         
         # Resize image to match model's expected input shape
-        target_size = (256, 256)  # Change this to 224, 224 if your model expects that
+        target_size = (224, 224)  # Change this to 224, 224 if your model expects that
         image = image.resize(target_size)
 
         # Convert to numpy array
