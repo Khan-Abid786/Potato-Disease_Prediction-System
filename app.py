@@ -9,7 +9,7 @@ MODEL_PATH = "Potato_Disease_Prediction1.h5"  # Ensure this path is correct
 model = tf.keras.models.load_model(MODEL_PATH)
 
 # Define class names (Ensure this matches the model's output)
-CLASS_NAMES = ["Unknown Class","Early Blight","Healthy", "Late Blight",  ]  # Adjust based on your training labels
+CLASS_NAMES = ["Unknown Class","Early Blight","Late Blight","Healthy"  ]  # Adjust based on your training labels
 
 # Function to preprocess image
 def preprocess_image(image):
