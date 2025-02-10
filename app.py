@@ -35,29 +35,55 @@ def preprocess_image(image):
 
 # ---- Streamlit UI ----
 
+# Create a boundary around the entire UI
+st.markdown(
+    """
+    <style>
+        .main {
+            border: 3px solid #4CAF50;
+            padding: 20px;
+            border-radius: 15px;
+        }
+    </style>
+    <div class="main">
+    """,
+    unsafe_allow_html=True,
+)
+
 # Welcome heading on the top-left
-st.markdown("<h2 style='text-align: left;'>👋 Welcome to the Potato Disease Prediction System</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: left;'>Welcome</h2>", unsafe_allow_html=True)
 
 # Navigation bar (fake navbar with subheading)
 st.markdown("---")
 st.markdown("<h3 style='text-align: center; color: green;'>🥔 Potato Disease Prediction</h3>", unsafe_allow_html=True)
 st.markdown("---")
 
-# Centered file uploader with a square-shaped drag-and-drop area
+# Centered file uploader with a square-shaped clickable drag-and-drop area
 st.markdown("<h4 style='text-align: center;'>Upload an image of a potato leaf:</h4>", unsafe_allow_html=True)
-uploaded_file = st.file_uploader("", type=["jpg", "png", "jpeg"], label_visibility="collapsed")
 
-# Square-shaped drag-and-drop area
+# Custom clickable upload area
 st.markdown(
     """
-    <div style='display: flex; justify-content: center;'>
-        <div style='border: 2px dashed gray; width: 300px; height: 300px; display: flex; align-items: center; justify-content: center;'>
-            <p style='text-align: center;'>Drag & Drop or Click to Upload</p>
-        </div>
+    <style>
+        .upload-box {
+            border: 2px dashed gray;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+    <div class="upload-box">
+        <label for="file_uploader">Click or Drag & Drop to Upload</label>
     </div>
     """,
     unsafe_allow_html=True,
 )
+
+uploaded_file = st.file_uploader("", type=["jpg", "png", "jpeg"], label_visibility="collapsed")
 
 # Submission button outside the square
 if uploaded_file:
@@ -92,4 +118,5 @@ if uploaded_file:
         else:
             st.error("Failed to preprocess image.")
 
-
+# Close the boundary div
+st.markdown("</div>", unsafe_allow_html=True)
